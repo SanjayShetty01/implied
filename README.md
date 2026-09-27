@@ -1,6 +1,6 @@
-# Betting Odds Converter
+# Implied
 
-[![Rust Testing](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/rust-test.yml/badge.svg)](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/rust-test.yml)
+[![Rust Testing](https://github.com/SanjayShetty01/implied/actions/workflows/rust-test.yml/badge.svg)](https://github.com/SanjayShetty01/implied/actions/workflows/rust-test.yml)
 
 A Command Line Interface (CLI) application that converts various types of betting odds into implied probabilities, payouts, and return on bet. Implied probability provides insight into the likelihood of winning as determined by the betting market.
 
@@ -16,7 +16,7 @@ A Command Line Interface (CLI) application that converts various types of bettin
 
 ## About
 
-The Betting Odds Converter allows users to easily convert different types of betting odds into implied probabilities. It provides valuable insights for bettors, helping them make informed decisions based on market odds.
+Implied allows users to easily convert different types of betting odds into implied probabilities. It provides valuable insights for bettors, helping them make informed decisions based on market odds.
 
 ## Supported Betting Odds
 
@@ -36,18 +36,18 @@ The application supports three widely used types of betting odds:
 
 ## Getting Started
 
-To get started with the Betting Odds Calculator, you'll need to install it on your local machine.
+To get started with Implied, you'll need to install it on your local machine.
 
 ## Installation
 
 ### From .exe (for Windows)
-1. Download the `.exe` from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
+1. Download the `.exe` from the [releases page](https://github.com/SanjayShetty01/implied/releases).
 
 ### From .deb (for Debian/Ubuntu-based systems)
-1. Download the `.deb` package from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
+1. Download the `.deb` package from the [releases page](https://github.com/SanjayShetty01/implied/releases).
 2. Open a terminal and run:
    ```bash
-   sudo dpkg -i betting-odds-converter_3.1.0-1_amd64.deb 
+   sudo dpkg -i implied_3.1.0-1_amd64.deb 
    ```
 3. Install any missing dependencies:
    ```bash
@@ -55,17 +55,17 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
    ```
 
 ### From .rpm (for Fedora/Red Hat-based systems)
-1. Download the `.rpm` package from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
+1. Download the `.rpm` package from the [releases page](https://github.com/SanjayShetty01/implied/releases).
 2. Open a terminal and run:
    ```bash
-   sudo rpm -i betting_odds_converter-3.1.0-1.x86_64.rpm 
+   sudo rpm -i implied-3.1.0-1.x86_64.rpm 
    ```
 
 ### From Source
 1. Clone the repository:
    ```bash
-   git clone https://github.com/SanjayShetty01/betting-odds-converter.git
-   cd betting-odds-converter
+   git clone https://github.com/SanjayShetty01/implied.git
+   cd implied
    ```
 2. Build the project:
    ```bash
@@ -79,7 +79,7 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
 ## Usage
 
 #### Screenshot
-![Betting Odds Converter Results](assets/results-table.jpg)
+![Implied Results](assets/results-table.jpg)
 
 1. **Enter Wager:**
    - Specify your bet amount or press Enter to keep the default ($100).
