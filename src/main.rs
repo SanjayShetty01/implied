@@ -6,23 +6,33 @@ use figlet_rs;
 use std::io;
 
 fn main() {
+    utils::print_separator('═', 56);
     let standard_font = figlet_rs::FIGfont::standard().unwrap();
-    let welcome_note = standard_font.convert("Implied");
-
-    assert!(welcome_note.is_some());
-    print!("{}", welcome_note.unwrap());
-    println!("{}", "Calculates Implied Probability".blue());
+    if let Some(banner) = standard_font.convert("Implied") {
+        print!("{}", format!("{banner}").cyan().bold());
+    }
+    println!(
+        "  {}  {}",
+        "⚡".yellow(),
+        "Betting Odds → Implied Probability Calculator"
+            .bright_white()
+            .bold()
+    );
+    utils::print_separator('═', 56);
     println!();
 
     let mut wager = utils::get_wager();
 
-    let mut exit: bool = false;
-
-    while !exit {
-        let mut num = String::new();
+    loop {
         println!();
         utils::display_main_menu();
 
+        let mut num = String::new();
+        print!(
+            "  {} ",
+            "▶ Your choice:".bright_cyan().bold()
+        );
+        utils::flush_stdout();
         io::stdin()
             .read_line(&mut num)
             .expect("Failed to read the number");
@@ -35,12 +45,29 @@ fn main() {
                 utils::which_calc_decider(value, wager);
             }
             Err(_) => {
-                println!("Invalid number! Please try again.");
+                println!(
+                    "  {} {}",
+                    "✗".red().bold(),
+                    "Invalid option! Please enter 1, 2, or 3.".red()
+                );
             }
         };
 
         println!();
-        println!("Press 'x' to exit, 'c' to change the wager or any other key to continue: ");
+        utils::print_separator('─', 56);
+        println!(
+            "  {}  {}   {}   {}",
+            "↩".bright_yellow(),
+            "[Enter] Continue".bright_white(),
+            "[C] Change wager".bright_yellow(),
+            "[X] Exit".bright_red()
+        );
+        utils::print_separator('─', 56);
+        print!(
+            "  {} ",
+            "▶".bright_cyan().bold()
+        );
+        utils::flush_stdout();
 
         let mut final_call = String::new();
         io::stdin()
@@ -48,7 +75,17 @@ fn main() {
             .expect("Failed to read input");
 
         if final_call.trim().eq_ignore_ascii_case("x") {
-            exit = true;
+            println!();
+            utils::print_separator('═', 56);
+            println!(
+                "  {}  {}",
+                "👋",
+                "Thanks for using Implied! Good luck on your bets."
+                    .bright_green()
+                    .bold()
+            );
+            utils::print_separator('═', 56);
+            break;
         } else if final_call.trim().eq_ignore_ascii_case("c") {
             wager = utils::get_wager();
         }
